@@ -37,6 +37,30 @@ Binary Types:	bytes, bytearray, memoryview
 None Type:	NoneType
 '''
 
+#Numeris DataTypes
+'''
+Int,Float,Complex
+'''
+salary = 100000    # int
+price = 289.0  # float
+z = 1j   # complex
+
+
+# print(salary)
+print(type(salary))
+print(type(price))
+print(type(z))
+
+#Conversions
+#From int to float
+print(salary) #Int
+decimal = float(salary) + float(salary)
+print(decimal) #Float
+
+reverse = int(decimal)
+print(reverse) #Int
+
+
 
 x=90
 y=30
@@ -112,3 +136,63 @@ print(type(langs))
 location = ['Nairobi','Nakuru','Kisumu','Mombasa']
 print(location[0],location[2],location[3],location[1])
 print(type(location))
+
+
+# Generating Random Numbers
+import random
+generate_random_number = random.randrange(1,100) #Generates a single random no eg,17,75
+show_random_number = random.randrange(1,4)
+print(show_random_number)
+print(generate_random_number)
+
+
+#Casting
+#Casting is done using Python constaructor functions // Similar to converting variables to other datatypes
+added = 3 +40 #43
+
+print(type(added)) #Int
+
+print(float(added)) #Float
+
+print(str(added)) #String
+
+
+#Strings
+doc = '''
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+'''
+print(doc)
+print(type(doc)) #str
+
+message = 'Learning Python Programming Language'
+print(message[2],message[7],message[8],message[9]) #r ,g ,empty space,P
+print(len(message)) # 36 Characters
+for data in message:
+    print(data) #Learning Python Programming Language(Vertically)
+
+
+#Check String
+if 'Python' in message:
+    print('Python is present in the string  message') #True
+else:
+    print('Python is not present in the string msessage')    
+
+print('good' in message) #False
+print('good' not in message) #True
+
+
+#Slicing Strings
+sliced = message[2:7] #Skip the start and end of the letters/values to be sliced  #arnin
+print(sliced) #arnin
+
+sliced_1 = message[:5] #Skip the  value ofelement indicated to slice upto 
+print(sliced_1)  #Learn
+
+sliced_2 = message[4:] #Starts from the value index of the 4th element till the end 
+print(sliced_2) #ning Python Programming Language
+
+sliced_3 = message[-5:-3] #Include the 5th elemnt from the right and while ommitimg the 3rd element from the right
+print(sliced_3) #gu
