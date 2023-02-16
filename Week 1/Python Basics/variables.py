@@ -37,7 +37,7 @@ Binary Types:	bytes, bytearray, memoryview
 None Type:	NoneType
 '''
 
-#Numeris DataTypes
+#Numeric DataTypes
 '''
 Int,Float,Complex
 '''
@@ -196,3 +196,95 @@ print(sliced_2) #ning Python Programming Language
 
 sliced_3 = message[-5:-3] #Include the 5th elemnt from the right and while ommitimg the 3rd element from the right
 print(sliced_3) #gu
+
+
+#Modifying Strings
+review= 'I like the Product '
+print(review.upper()) #I LIKE THE PRODUCT
+print(review.lower()) #i like the product
+print(review.strip()) #Removes the whitespaces at the start or the end of the string
+
+
+#Replacing Strings
+print(review.replace('like','dislike')) #I dislike the Product
+print(review.replace('I','We')) #We like the Product
+
+
+#Split
+print(review.split('li')) #['I ', 'ke the Product ']
+
+
+#String Concatenation
+Movie_1 = 'Hannah'
+review_1 = ' is a Thriller Movie'
+review_2 = 'is a Good movie'
+view = Movie_1 + review_1
+view_2 = Movie_1 + " " + review_2
+print(view)
+print(view_2)
+
+
+#Formating Strings
+hobby = 'Coding'
+say = 'I love {}'
+print(say.format(hobby))
+
+product = 'Book'
+price_2 = 200
+day = 'Monday'
+print('I bought a {} that costs Ksh{} on {}'.format(product,price_2,day))
+
+
+#Escape Characters
+team_1 = 'We are Manchester United and We are the \'reds\' ' #\' or \" is used to print the quotation symbol
+team_2 = 'We are \\Chelsea,\n the Blues' #Prints the blues on a new line
+print(team_1)
+print(team_2)
+
+
+
+#Boolean DataTypes
+#Often are True or False
+
+print(90>3) # Returns True
+print(90<3) # Returns False
+print(90==90) #Returns True
+print(90=='90') # Returns False
+print(90==30) #False
+
+print(bool('hello')) #True
+print(bool(355)) #True
+
+class myclass():
+  def __len__(self):
+    return 0
+
+myobj = myclass()
+print(bool(myobj))# False
+
+
+#Functions using Booleans ,Example 1
+#Part 1
+def name():
+    return True
+print(name()) #True
+
+#Part 2 
+# def name():
+#     return False
+# print(name()) #False
+
+if name():
+    print("The name function has a Bool of type True ") #Prints part 1 of the name function since it is of type  True
+else:
+    print("The name function has a bool of type False ")  #Prints this line once you Uncomment  part 2 of the name function since it is of type False  
+
+
+#Functions using Booleans ,Example 2
+def register(is_logged_in:bool):      
+    if is_logged_in == True:
+        return 'Logged In'  
+    return "Not logged In"    
+
+print(register(is_logged_in=False)) #Not logged In
+print(register(is_logged_in=True)) #Logged In
