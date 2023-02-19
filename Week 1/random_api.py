@@ -15,5 +15,5 @@ if r.status_code == 200:
     for p, user in enumerate(result["results"]):
         print(f"{p + 1}. {user['name']['first']} {user['name']['last']}")
 else:
-    print("Sorry Inavalid Response")
+    print("Sorry Invalid Response")
 

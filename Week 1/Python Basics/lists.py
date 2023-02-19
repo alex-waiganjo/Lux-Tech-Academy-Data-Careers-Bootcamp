@@ -44,4 +44,20 @@ print(names[-0]) #James
 print(names[0]) #James
 
 #Range of Indexes
+names = ['James','Ken','Joy','Tracy','Rose','Peter','Joseph','Quicny','Lilian']
+print(names[2:5]) #['Joy', 'Tracy', 'Rose']
+print(names[4:8]) #['Rose', 'Peter', 'Joseph', 'Quicny']
+print(names[:8]) # ['James', 'Ken', 'Joy', 'Tracy', 'Rose', 'Peter', 'Joseph', 'Quicny']
+print(names[5:]) # ['Peter', 'Joseph', 'Quicny', 'Lilian']
 
+
+#Check if item exists
+if 'Lilian' in names:
+    print('Present') #Result
+else:
+    print("Not Present")    
+
+if 'Alex' in names:
+    print('Present')
+else:
+    print("Not Present") #Result
