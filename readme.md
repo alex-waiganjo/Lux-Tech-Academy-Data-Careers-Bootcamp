@@ -1,3 +1,1 @@
-## Week 2 Technical Article
-
-# Exploratory Data Analysis Ultimate Guide
+# A Brief explanation of the  Bootcamp Curriculum
