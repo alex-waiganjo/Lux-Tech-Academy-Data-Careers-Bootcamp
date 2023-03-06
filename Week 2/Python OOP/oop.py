@@ -29,3 +29,44 @@ print(user_2)
 # print(f'{user_1.name} ,{user_1.email} , {user_1.pwd}')
 # print(f'{user_2.name} ,{user_2.email} , {user_2.pwd}')
 
+
+
+class Employee:
+
+    no_of_employees = 0
+    raise_amount= 1.04
+    def __init__(self,fname,lname,pay) -> None:
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+
+        Employee.no_of_employees += 1
+
+    def fullname(self):
+        return '{} ,{}'.format(self.fname,self.lname) 
+    
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+        return self.pay
+
+#Initial no of Employees is 0
+print(Employee.no_of_employees)
+
+#Instantiate the Class
+emp1=Employee('Rose','Williams',90000)
+emp2=Employee('Jimmy','Howdy',80000)
+
+#Get the No of Employees
+print(Employee.no_of_employees)
+
+#Print the fullname
+print(emp1.fullname())
+
+#Increase pay
+print(emp1.apply_raise())
+
+#Attributes
+print(Employee.__dict__)
+print(emp1.__dict__)
+
+
