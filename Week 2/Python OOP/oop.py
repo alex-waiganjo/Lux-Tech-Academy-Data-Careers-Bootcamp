@@ -48,6 +48,26 @@ class Employee:
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)
         return self.pay
+    
+    @classmethod
+    def set_raise_amt(cls,amount):
+        cls.raise_amount =amount  
+
+    @classmethod
+    def from_string(cls,emp_str):
+        fname,lname,pay = emp_str.split('-') 
+        return cls(fname,lname,pay) 
+    
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+    
+
+import datetime
+my_date = datetime.date(2023,3,7) 
+print(Employee.is_workday(my_date))
 
 #Initial no of Employees is 0
 print(Employee.no_of_employees)
@@ -69,4 +89,15 @@ print(emp1.apply_raise())
 print(Employee.__dict__)
 print(emp1.__dict__)
 
+print(Employee.raise_amount)
+Employee.set_raise_amt(1.06)
+print(Employee.raise_amount)
+print(emp1.raise_amount)
 
+
+#Passing strings
+emp_str1 =  'ken-james-30000'
+emp3 = Employee.from_string(emp_str1)
+print(emp3.fname)
+print(emp3.pay)
+print(emp3.lname)
