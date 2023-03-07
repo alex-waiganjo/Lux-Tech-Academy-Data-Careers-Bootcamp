@@ -43,7 +43,7 @@ class Employee:
         Employee.no_of_employees += 1
 
     def fullname(self):
-        return '{} ,{}'.format(self.fname,self.lname) 
+        return '{} ,{}'.format(self.fname , self.lname) 
     
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)
@@ -76,9 +76,6 @@ print(Employee.no_of_employees)
 emp1=Employee('Rose','Williams',90000)
 emp2=Employee('Jimmy','Howdy',80000)
 
-#Get the No of Employees
-print(Employee.no_of_employees)
-
 #Print the fullname
 print(emp1.fullname())
 
@@ -101,3 +98,71 @@ emp3 = Employee.from_string(emp_str1)
 print(emp3.fname)
 print(emp3.pay)
 print(emp3.lname)
+
+
+#Inheritance
+class Developer(Employee):
+  def __init__(self, fname, lname, pay,prog_lang) -> None:
+      super().__init__(fname, lname, pay)
+      self.prog_lang = prog_lang
+
+
+  def info(self):     
+      return '{} , {} is a {} Developer.'.format(self.fname,self.lname,self.prog_lang)
+       
+
+
+dev_1 = Developer('Elon','Musk',20000,'Python')
+dev_2= Developer('Elton','Musyoka',10000,'Javascript')
+# print(help(emp4))
+print(dev_1.fullname())
+print(dev_1.apply_raise())
+print(dev_1.info())
+print(dev_2.info())
+
+
+#Subclass
+class Manager(Employee):
+    def __init__(self, fname, lname, pay,employees=None) -> None:
+        super().__init__(fname, lname, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+
+    def add_emp(self,emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+                    
+    def remove_emp(self,emp):
+        if emp in self.employees:
+            self.employees.remove(emp)  
+
+    def all_emps(self):
+        for emp in self.employees:
+            print('===>>',emp.info())
+
+mng_1 = Manager('Kelly','Bill',50000,[dev_1])
+print(mng_1.fullname())
+
+mng_1.add_emp(dev_2)
+print('Print out all epmloyees')
+mng_1.all_emps()
+
+print('Remove one employee')
+mng_1.remove_emp(dev_1)
+mng_1.all_emps()
+
+#Check instances of classes
+print(isinstance(mng_1,Employee)) #True
+print(isinstance(mng_1,Developer)) #False
+
+
+#Check subclasses
+print(issubclass(Manager,Employee))#True
+print(issubclass(Developer,Employee)) #True
+print(issubclass(Developer,Manager)) #False
+
+
+#Get the Total No of Employees
+print(f'The Total Employees are {Employee.no_of_employees}. ')
